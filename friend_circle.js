@@ -19,15 +19,7 @@ Explanation:The 0th and 1st students are direct friends, the 1st and 2nd student
 so the 0th and 2nd students are indirect friends. All of them are in the same friend circle, so return 1.
 */
 
-const test1D = (A, B) => {
-	if ( A.length != B.length)
-		return false
-	for (let i = 0; i < A.length; ++i) {
-		if (A[i] != B[i])
-			return false
-	}
-	return true
-}
+const Test = require( './Test')
 
 const findRoot = (x, p) => {
 	if ( p[x] !== x)
@@ -72,13 +64,14 @@ console.log("Test findRoot")
 let p = [1,2,3,3]
 let result = [3,3,3,3]
 console.assert(findRoot(0, p) === 3)
-console.assert(test1D(p, result) === true)
+
+console.assert(Test.compare1DArray(p, result) === true)
 
 console.log("Test union")
 p = [0,1,2,3,4]
 result = [3,1,2,3,4]
 union(0,3,p)
-console.assert(test1D(p, result) === true)
+console.assert(Test.compare1DArray(p, result) === true)
 
 console.log("Test findCircleNum")
 let M = [[1,1,0],
@@ -88,5 +81,7 @@ console.assert(findCircleNum(M) === 2)
 M = [[1,0,0],[0,1,0],[0,0,1]]
 console.assert(findCircleNum(M) === 3)
 
-M = [[1,0,0,1],[0,1,1,0],[0,1,1,1],[1,0,1,1]]
-console.assert(findCircleNum(M) === 3)
+M = [[1,1,0],
+ [1,1,1],
+ [0,1,1]]
+console.assert(findCircleNum(M) === 1)
