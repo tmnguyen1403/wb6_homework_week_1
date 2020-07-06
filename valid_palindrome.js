@@ -1,8 +1,7 @@
 
 function isAlphabet(c) {
 	let lower_alpha = "abcdefghijklmnopqrstuvwxyz"
-	let upper_alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	return lower_alpha.includes(c) || upper_alpha.includes(c)
+	return lower_alpha.includes(c.toLowerCase())
 }
 
 function isNumeric(c) {
