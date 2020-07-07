@@ -15,7 +15,22 @@ function compare1DArray(A, B) {
 	return true
 }
 
+function compare2DArray(A, B) {
+	if (A.length != B.length)
+		return false
+	for (let i = 0; i < A.length; ++i) {
+		if (compare1DArray(A[i], B[i]) === false)
+			return false
+	}
+	return true
+}
+
+function print2DArray(A) {
+	A.forEach(row => console.log(row.join(" ")))
+}
 module.exports = {
 	helloWorld,
-	compare1DArray
+	compare1DArray,
+	compare2DArray,
+	print2DArray
 }
